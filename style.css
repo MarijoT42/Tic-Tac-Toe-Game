@@ -6,8 +6,10 @@ body {
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 #container {
@@ -15,25 +17,28 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 90vw;
+    max-width: 350px; /* Limita el ancho máximo del contenedor del juego */
 }
 
 #turno {
     margin-bottom: 10px;
+    font-size: 1.2rem; /* Ajusta el tamaño de la fuente según sea necesario */
 }
 
 #Juego {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 5px;
-    width: 90vw;
-    max-width: 360px;
+    width: 100%;
+    max-width: 350px; /* Limita el ancho máximo del contenedor del juego */
 }
 
 #Juego .cells {
     aspect-ratio: 1;
     width: 100%;
     position: relative;
-    font-size: 3rem;
+    font-size: 2rem; /* Utiliza unidades relativas para el tamaño de la fuente */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -55,15 +60,14 @@ body {
 
 .winner-box {
     position: fixed;
-    top: 42%;
-    left: 100%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: greenyellow;
     color: black;
     padding: 20px;
     border-radius: 10px;
-    font-size: 2rem;
+    font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
     display: none; /* Ocultar inicialmente */
     z-index: 1000;
 }
@@ -84,4 +88,63 @@ body {
 
 #resetButton:hover {
     background-color: #45a049; /* Cambiar color de fondo al pasar el ratón */
+}
+#exitButton {
+    background-color: #b5fdf7;
+    color: black;
+    padding: 10px, 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+#exitButton:hover {
+    background-color: rgb(255, 101, 101);
+}
+/* Modal styles*/
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal_content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    color: black;
+    border-radius: 10px;
+}
+
+.modal_content button{
+    background-color: #b5fdf7;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal_content button:hover {
+    background-color: #45a049;
 }

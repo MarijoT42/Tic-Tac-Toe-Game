@@ -8,8 +8,20 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    
+    <div id="modal" class="modal">
+        <div class="modal_content">
+            <h2>Elige el modo de Juego</h2>
+            <button id="singleplayerButton">Singleplayer</button>
+            <button id="multiplayerButton">Local</button>
+        </div>
+    </div>
+
     <div id="container">
+        <svg id="line" xmlns="http://www.w3.org/2000/svg">
+            <line id="line-horizontal" x1="0" y1="45%" x2="100%" y2="45%"></line>
+            <line id="line-vertical" x1="45%" y1="0" x2="45%" y2="100%"></line>
+            <line id="line-diagonal" x1="0" y1="0" x2="100%" y2="100%"></line>
+        </svg>
         <div id="turno" class="mb-3"></div>
         <div id="Juego">
             <div class="cells"></div>
@@ -24,6 +36,7 @@
         </div>
         <div id="ganador" class="winner-box">Jugador X gana!</div>
         <button id="resetButton" class="btn btn-primary mt-3">Reset</button>
+        <button id="exitButton">Salir</button>
     </div>
     <script src="index.js"></script>
 </body>
