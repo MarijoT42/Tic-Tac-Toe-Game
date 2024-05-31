@@ -1,3 +1,5 @@
+
+
 body {
     width: 100vw;
     height: 100vh;
@@ -120,7 +122,7 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
 }
 .modal_content {
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
@@ -147,4 +149,19 @@ body {
 
 .modal_content button:hover {
     background-color: #45a049;
+}
+
+@media only screen and (max-width: 800px){
+    
+    #Juego {
+        
+        /*gap: 5px;*/
+        width: 50%;
+        max-width: 200px; /* Limita el ancho máximo del contenedor del juego */
+    }
+    #Juego .cells {
+        /*aspect-ratio: 1;*/
+        width: 100%;
+    }
+    
 }
