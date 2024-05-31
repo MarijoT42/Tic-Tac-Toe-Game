@@ -1,0 +1,87 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background: black;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#turno {
+    margin-bottom: 10px;
+}
+
+#Juego {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    width: 90vw;
+    max-width: 360px;
+}
+
+#Juego .cells {
+    aspect-ratio: 1;
+    width: 100%;
+    position: relative;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid greenyellow;
+    transition: background-color 0.3s ease;
+}
+
+#Juego .cells.x-selected {
+    background-color: blue;
+}
+
+#Juego .cells.o-selected {
+    background-color: red;
+}
+
+#Juego .cells:hover {
+    background-color: yellow; /* Cambiar color de fondo al pasar el cursor */
+}
+
+.winner-box {
+    position: fixed;
+    top: 42%;
+    left: 100%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    background-color: greenyellow;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 2rem;
+    display: none; /* Ocultar inicialmente */
+    z-index: 1000;
+}
+
+#resetButton {
+    background-color: #b5fdf7; /* Color de fondo */
+    color: black; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Quitar subrayado */
+    display: inline-block; /* Mostrar como bloque */
+    font-size: 16px; /* Tamaño de fuente */
+    margin: 10px; /* Margen exterior */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre él */
+    border: none; /* Quitar borde */
+    border-radius: 5px; /* Radio del borde */
+}
+
+#resetButton:hover {
+    background-color: #45a049; /* Cambiar color de fondo al pasar el ratón */
+}
