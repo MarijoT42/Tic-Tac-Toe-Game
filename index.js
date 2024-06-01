@@ -50,7 +50,9 @@ $(document).ready(function() {
                 if (!gameOver) {
                     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                     updateTurn();
+                    checkDraw();
                     if (singleplayer && currentPlayer === computerToken) {
+                        disableUserInput();
                         setTimeout(computerMove, 500);
                     } else {
                         checkDraw();
@@ -93,6 +95,7 @@ $(document).ready(function() {
                 currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
                 updateTurn();
                 checkDraw();
+                enableUserInput();
             }
         }
     }
@@ -167,7 +170,7 @@ $(document).ready(function() {
             $(cells[c1]).text() === $(cells[c2]).text() &&
             $(cells[c2]).text() === $(cells[c3]).text()
         ) {
-            
+           
             showWinner($(cells[c1]).text());
         }
     }
@@ -218,6 +221,14 @@ $(document).ready(function() {
         computerToken = 'O';
         gameOver = false;
         updateTurn();
+    }
+
+    function disableUserInput() {
+        cells.off('click');
+    }
+
+    function enableUserInput() {
+        cells.on('click', userMove);
     }
 
     // Mostrar el modal al inicio
