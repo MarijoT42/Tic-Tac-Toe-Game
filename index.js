@@ -172,8 +172,6 @@ $(document).ready(function() {
         }
     }
 
-   
-
     function checkDraw() {
         if ($('.cells:empty').length === 0 && !gameOver) {
             showDraw();
