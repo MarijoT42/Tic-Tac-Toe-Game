@@ -7,7 +7,7 @@ $(document).ready(function() {
     let singleplayer = false;
     let winAudio = new Audio('./sounds/win.wav');
     let goAudio = new Audio('./sounds/go.wav');
-    let drawAudio = new Audio('./sounds/draw.wav');
+    let drawAudio = new Audio('./s+ounds/draw.wav');
 
     function showGame() {
         $('#container').show();
